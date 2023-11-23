@@ -1,0 +1,39 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  creationTimestamp: null
+  labels:
+    app.kubernetes.io/created-by: application-service
+    app.kubernetes.io/instance: devfile-sample-7wxw
+    app.kubernetes.io/managed-by: kustomize
+    app.kubernetes.io/name: devfile-sample-7wxw
+    app.kubernetes.io/part-of: dc-metro-map
+  name: devfile-sample-7wxw
+spec:
+  replicas: 1
+  revisionHistoryLimit: 0
+  selector:
+    matchLabels:
+      app: nodejs-app
+      app.kubernetes.io/instance: devfile-sample-7wxw
+  strategy: {}
+  template:
+    metadata:
+      creationTimestamp: null
+      labels:
+        app: nodejs-app
+        app.kubernetes.io/instance: devfile-sample-7wxw
+    spec:
+      containers:
+      - image: quay.io/redhat-user-workloads-stage/shbose-tenant/dc-metro-map/devfile-sample-7wxw@sha256:28cba07f9b7c94082556dfd619f9c41bb3c62de4938178232ad56c6b4fb7f438
+        name: my-nodejs
+        ports:
+        - containerPort: 3001
+          name: http
+          protocol: TCP
+        - containerPort: 8080
+        resources:
+          requests:
+            cpu: 10m
+            memory: 50Mi
+status: {}
