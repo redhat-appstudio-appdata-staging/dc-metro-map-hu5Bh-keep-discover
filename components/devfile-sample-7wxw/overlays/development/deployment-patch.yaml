@@ -1,0 +1,17 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  creationTimestamp: null
+  name: devfile-sample-7wxw
+spec:
+  selector: {}
+  strategy: {}
+  template:
+    metadata:
+      creationTimestamp: null
+    spec:
+      containers:
+      - image: quay.io/redhat-user-workloads-stage/shbose-tenant/dc-metro-map/devfile-sample-7wxw@sha256:28cba07f9b7c94082556dfd619f9c41bb3c62de4938178232ad56c6b4fb7f438
+        name: my-nodejs
+        resources: {}
+status: {}
